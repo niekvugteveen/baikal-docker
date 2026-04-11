@@ -42,4 +42,6 @@ COPY files/docker-entrypoint.d/*.sh files/docker-entrypoint.d/*.php files/docker
 COPY --from=builder --chown=nginx:nginx /baikal /var/www/baikal
 COPY files/nginx.conf /etc/nginx/conf.d/default.conf
 
+EXPOSE 4569
+
 VOLUME ["/var/www/baikal/config", "/var/www/baikal/Specific"]
